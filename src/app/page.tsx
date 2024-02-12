@@ -1,113 +1,147 @@
-import Image from "next/image";
-
 export default function Home() {
+  // 똑똑한 청년, 안녕하세요?
+  // 오늘도 함께 화이팅해요! weight 설정 필요
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <div className="w-full overflow-y-scroll h-3000px">
+        <div className="pt-105px pl-85px pr-130px">
+          <p className="text-2xl font-semibold text-6F6F6F">
+            똑똑한 청년, 안녕하세요?
+          </p>
+          <p className="text-2xl font-semibold text-2D2D2D">
+            오늘도 함께 화이팅해요!
+          </p>
+          <input className="w-full px-10 py-5 mt-10"></input>
+        </div>
+        <div className="flex gap-1 mt-10 h-560px">
+          <div className="flex items-center justify-center flex-1 h-full text-2xl font-semibold rounded-md bg-stone-400">
+            서비스 소개 실시간으로 업데이트되는 문제은행
+          </div>
+          <div className="flex flex-col items-center justify-center flex-1 h-full gap-1 text-2xl font-semibold">
+            <div className="flex items-center justify-center flex-1 w-full h-full text-2xl font-semibold rounded-md bg-stone-400">
+              면접 문제 만들기
+            </div>
+            <div className="flex items-center justify-center flex-1 w-full h-full text-2xl font-semibold rounded-md bg-stone-400">
+              면접 질문 풀기
+            </div>
+          </div>
+          <div className="flex items-center justify-center h-full text-2xl font-semibold rounded-md bg-stone-400 flex-2">
+            프론트엔드 신입 기술면접 최다 출제
+          </div>
+        </div>
+        <div className="flex justify-between w-full space-x-2 mt-28">
+          <p className="text-2xl font-semibold">
+            작년 하반기 면접 질문 트렌드를 모아왔어요🔥
+          </p>
+          <p>더보기</p>
+        </div>
+        <div className="flex gap-2 mt-10">
+          <div className="flex-col ">
+            <div className="w-56 px-10 py-5 bg-yellow-200 rounded-md h-60">
+              개발 커뮤니케이션 질문
+            </div>
+            <div className="flex justify-between mt-4">
+              <div className="rounded-md bg-amber-300">Front</div>
+              <div>24-01-25</div>
+            </div>
+          </div>
+          <div className="flex-col ">
+            <div className="w-56 px-10 py-5 bg-yellow-200 rounded-md h-60">
+              개발 커뮤니케이션 질문
+            </div>
+            <div className="flex justify-between mt-4">
+              <div className="rounded-md bg-amber-300">Front</div>
+              <div>24-01-25</div>
+            </div>
+          </div>
+          <div className="flex-col ">
+            <div className="w-56 px-10 py-5 bg-yellow-200 rounded-md h-60">
+              개발 커뮤니케이션 질문
+            </div>
+            <div className="flex justify-between mt-4">
+              <div className="rounded-md bg-amber-300">Front</div>
+              <div>24-01-25</div>
+            </div>
+          </div>
+          <div className="flex-col ">
+            <div className="w-56 px-10 py-5 bg-yellow-200 rounded-md h-60">
+              개발 커뮤니케이션 질문
+            </div>
+            <div className="flex justify-between mt-4">
+              <div className="rounded-md bg-amber-300">Front</div>
+              <div>24-01-25</div>
+            </div>
+          </div>
+          <div className="flex-col ">
+            <div className="w-56 px-10 py-5 bg-yellow-200 rounded-md h-60">
+              개발 커뮤니케이션 질문
+            </div>
+            <div className="flex justify-between mt-4">
+              <div className="rounded-md bg-amber-300">Front</div>
+              <div>24-01-25</div>
+            </div>
+          </div>
+          <div className="flex-col ">
+            <div className="w-56 px-10 py-5 bg-yellow-200 rounded-md h-60">
+              개발 커뮤니케이션 질문
+            </div>
+            <div className="flex justify-between mt-4">
+              <div className="rounded-md bg-amber-300">Front</div>
+              <div>24-01-25</div>
+            </div>
+          </div>
+          <div className="flex-col ">
+            <div className="w-56 px-10 py-5 bg-yellow-200 rounded-md h-60">
+              개발 커뮤니케이션 질문
+            </div>
+            <div className="flex justify-between mt-4">
+              <div className="rounded-md bg-amber-300">Front</div>
+              <div>24-01-25</div>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-between w-full space-x-2 mt-28">
+          <p className="text-2xl font-semibold">실시간 등록된 문제들</p>
+          <p>더보기</p>
+        </div>
+        <div className="flex flex-col gap-4">
+          <div className="flex justify-between">
+            신입 개발자 기술면접 CS 질문 정리 - 백엔드
+            <div className="flex justify-between gap-8">
+              <div>김땡떙</div>
+              <div>10분전</div>
+            </div>
+          </div>
+          <div className="flex justify-between">
+            신입 개발자 기술면접 CS 질문 정리 - 백엔드
+            <div className="flex justify-between gap-8">
+              <div>김땡떙</div>
+              <div>10분전</div>
+            </div>
+          </div>
+          <div className="flex justify-between">
+            신입 개발자 기술면접 CS 질문 정리 - 백엔드
+            <div className="flex justify-between gap-8">
+              <div>김땡떙</div>
+              <div>10분전</div>
+            </div>
+          </div>
+          <div className="flex justify-between">
+            신입 개발자 기술면접 CS 질문 정리 - 백엔드
+            <div className="flex justify-between gap-8">
+              <div>김땡떙</div>
+              <div>10분전</div>
+            </div>
+          </div>
+          <div className="flex justify-between">
+            신입 개발자 기술면접 CS 질문 정리 - 백엔드
+            <div className="flex justify-between gap-8">
+              <div>김땡떙</div>
+              <div>10분전</div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
