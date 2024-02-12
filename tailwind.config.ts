@@ -16,6 +16,9 @@ const config: Config = {
         "6F6F6F": "#6F6F6F",
         "2D2D2D": "#2D2D2D",
       },
+      backgroundColor: {
+        "86A1FF": "#86A1FF",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -23,30 +26,42 @@ const config: Config = {
       },
       width: {
         "280px": "280px",
+        "basic-section": "calc(100vw - 280px)",
       },
       height: {
         "80px": "80px",
         "560px": "560px",
         "3000px": "3000px",
+        "basic-section": "calc(100vh - 80px)",
       },
       padding: {
+        "16px": "16px",
+        "25px": "25px",
         "30px": "30px",
         "72px": "72px",
         "80px": "80px",
         "85px": "85px",
+        "90px": "90px",
+
         "105px": "105px",
+        "123px": "123px",
         "130px": "130px",
         "280px": "280px",
       },
       margin: {
         "80px": "80px",
+        "128px": "128px",
         "380px": "380px",
       },
       flex: {
         "2": "2",
       },
       gap: {
+        "12px": "12px",
+        "21px": "21px",
+        "26px": "26px",
         "46px": "46px",
+        "128px": "128px",
       },
     },
   },

@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* adding components classes */
+@layer components {
+  .button--reset {
+    border: 0;
+    outline: 0;
+  }
+
+  .input--reset {
+    border: none;
+  }
+
+  .input--reset:focus {
+    outline: none;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
