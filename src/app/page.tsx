@@ -1,5 +1,6 @@
-import FirstSection from "./firstSection";
-import SecondSection from "./secondSection copy";
+import FirstSection from "@/components/home/FirstSection";
+import SecondSection from "@/components/home/SecondSection";
+import ThirdSection from "@/components/home/ThirdSection";
 
 export default function Home() {
   // 똑똑한 청년, 안녕하세요?
@@ -8,6 +9,7 @@ export default function Home() {
     <>
       <FirstSection />
       <SecondSection />
+      <ThirdSection />
     </>
   );
 }
