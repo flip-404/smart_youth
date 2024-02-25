@@ -20,6 +20,7 @@ const config: Config = {
       backgroundColor: {
         "86A1FF": "#86A1FF",
         FFF6A5: "#FFF6A5",
+        D9D9D9: "#D9D9D9",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -39,9 +40,12 @@ const config: Config = {
       },
       padding: {
         "10px": "10px",
+        "13px": "13px",
+        "20px": "20px",
         "16px": "16px",
         "25px": "25px",
         "30px": "30px",
+        "40px": "40px",
         "60px": "60px",
         "68px": "68px",
         "72px": "72px",
@@ -58,6 +62,8 @@ const config: Config = {
       margin: {
         "37px": "37px",
         "80px": "80px",
+        "90px": "90px",
+        "123px": "123px",
         "128px": "128px",
         "380px": "380px",
       },
