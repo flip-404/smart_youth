@@ -8,7 +8,7 @@ export default function SideBar() {
   // text-weight 아직 설정하지 않았음
   // drop-shadow도 몇인지 설정하지 않ㄹ았음
   return (
-    <div className="fixed left-0 h-screen w-280px bg-white sidebar-shadow">
+    <div className="fixed left-0 h-screen w-280px bg-white sidebar-shadow z-[9]">
       <div className="flex flex-col gap-46px pl-[72px] pt-130px">
         <NavLink
           href="/"
