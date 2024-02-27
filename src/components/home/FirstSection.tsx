@@ -1,30 +1,33 @@
+import Link from "next/link";
+
 export default function FirstSection() {
   return (
-    <div className="w-full h-basic-section pb-90px flex flex-col">
-      <div className="flex w-full justify-between pt-105px pl-85px pr-130px mb-128px">
+    <div className="w-full h-basic-section px-[80px] pb-[88px] gap-[65px] flex flex-col bg-[#F9FAFE]">
+      <div className="flex w-full justify-between pt-[60px] pb-[32px]">
         <div>
-          <p className="text-2xl font-semibold text-6F6F6F">
-            똑똑한 청년, 안녕하세요?
+          <p className="text-[32px] font-[400] text-6F6F6F">
+            <span className="text-[#839EFF]">똑똑한 유진 청년</span>,
+            안녕하세요?
           </p>
-          <p className="text-2xl font-semibold text-2D2D2D">
+          <p className="text-[48px] font-[700] text-2D2D2D">
             오늘도 함께 화이팅해요!
           </p>
         </div>
-        <div className="flex items-center gap-26px rounded-full bg-white px-25px">
+        <div className="flex items-center w-[662px] mt-[52px] py-[12px] pl-[29px] pr-[16px] gap-26px rounded-full bg-white px-25px">
           <svg
             width="32"
-            height="32"
-            viewBox="0 0 32 32"
+            height="33"
+            viewBox="0 0 32 33"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M28.7075 27.2928L22.4488 21.0353C24.2628 18.8574 25.1674 16.064 24.9743 13.2362C24.7813 10.4084 23.5054 7.76385 21.4122 5.85275C19.319 3.94164 16.5696 2.9111 13.7359 2.9755C10.9023 3.0399 8.20249 4.19429 6.19827 6.19851C4.19404 8.20274 3.03966 10.9025 2.97526 13.7362C2.91086 16.5698 3.9414 19.3193 5.85251 21.4125C7.76361 23.5057 10.4081 24.7815 13.236 24.9746C16.0638 25.1676 18.8572 24.2631 21.035 22.449L27.2925 28.7078C27.3855 28.8007 27.4958 28.8744 27.6171 28.9247C27.7385 28.975 27.8686 29.0008 28 29.0008C28.1314 29.0008 28.2615 28.975 28.3829 28.9247C28.5043 28.8744 28.6146 28.8007 28.7075 28.7078C28.8005 28.6149 28.8742 28.5046 28.9244 28.3832C28.9747 28.2618 29.0006 28.1317 29.0006 28.0003C29.0006 27.8689 28.9747 27.7388 28.9244 27.6174C28.8742 27.496 28.8005 27.3857 28.7075 27.2928ZM5.00004 14.0003C5.00004 12.2203 5.52788 10.4802 6.51681 9.00015C7.50575 7.52011 8.91136 6.36656 10.5559 5.68537C12.2004 5.00418 14.01 4.82595 15.7559 5.17322C17.5017 5.52048 19.1053 6.37765 20.364 7.63632C21.6227 8.895 22.4798 10.4986 22.8271 12.2445C23.1744 13.9903 22.9961 15.7999 22.315 17.4444C21.6338 19.089 20.4802 20.4946 19.0002 21.4835C17.5201 22.4724 15.7801 23.0003 14 23.0003C11.6139 22.9976 9.32626 22.0486 7.639 20.3613C5.95175 18.6741 5.00269 16.3864 5.00004 14.0003Z"
-              fill="#CCCCCC"
+              d="M28.7078 27.7925L22.449 21.535C24.2631 19.3572 25.1676 16.5638 24.9746 13.736C24.7815 10.9081 23.5057 8.26361 21.4125 6.35251C19.3193 4.4414 16.5698 3.41086 13.7362 3.47526C10.9025 3.53966 8.20274 4.69404 6.19851 6.69827C4.19429 8.70249 3.0399 11.4023 2.9755 14.2359C2.9111 17.0696 3.94164 19.819 5.85275 21.9122C7.76385 24.0054 10.4084 25.2813 13.2362 25.4743C16.064 25.6674 18.8574 24.7628 21.0353 22.9488L27.2928 29.2075C27.3857 29.3005 27.496 29.3742 27.6174 29.4244C27.7388 29.4747 27.8689 29.5006 28.0003 29.5006C28.1317 29.5006 28.2618 29.4747 28.3832 29.4244C28.5046 29.3742 28.6149 29.3005 28.7078 29.2075C28.8007 29.1146 28.8744 29.0043 28.9247 28.8829C28.975 28.7615 29.0008 28.6314 29.0008 28.5C29.0008 28.3686 28.975 28.2385 28.9247 28.1171C28.8744 27.9958 28.8007 27.8855 28.7078 27.7925ZM5.00029 14.5C5.00029 12.72 5.52813 10.98 6.51706 9.49991C7.50599 8.01987 8.9116 6.86631 10.5561 6.18513C12.2007 5.50394 14.0103 5.32571 15.7561 5.67297C17.5019 6.02024 19.1056 6.87741 20.3642 8.13608C21.6229 9.39475 22.4801 10.9984 22.8274 12.7442C23.1746 14.4901 22.9964 16.2997 22.3152 17.9442C21.634 19.5887 20.4805 20.9943 19.0004 21.9833C17.5204 22.9722 15.7803 23.5 14.0003 23.5C11.6141 23.4974 9.3265 22.5483 7.63925 20.8611C5.95199 19.1738 5.00293 16.8862 5.00029 14.5Z"
+              fill="#ABC2FF"
             />
           </svg>
           <input
-            className="input--reset"
+            className="input--reset flex-1"
             placeholder="2024 상반기 네이버 코딩 테스트 문제"
           ></input>
           <button className="bg-black text-white py-16px px-25px rounded-full button--reset">
@@ -32,15 +35,49 @@ export default function FirstSection() {
           </button>
         </div>
       </div>
-      <div className="flex flex-2 pl-123px pr-130px h-full w-full gap-21px">
-        <div className="flex flex-col justify-between flex-1 h-full gap-12px">
-          <div className="h-full bg-86A1FF rounded-2xl">서비스 소개</div>
-          <div className="h-full bg-86A1FF rounded-2xl">
-            실시간으로 업데이트되는 문제은행
+      <div className="flex flex-2 h-full w-full gap-[16px]">
+        <div className="flex flex-col justify-between flex-1 h-full gap-[12px]">
+          <div className="pt-[37px] pl-[34px] pr-[45px] pb-[24px] flex-1 bg-[#E4DFFE] rounded-[24px]">
+            <p className="text-[24px] font-[600] text-[#BA8AEB]">
+              서비스 소개 | 면접 준비의 시작!
+            </p>
+            <p className="text-[32px] font-[600]">
+              면접 문제를 만들어야하는 이유
+            </p>
+            <p className="text-[32px] font-[600]">행동 유도 멘트 필요</p>
+            <div className="flex justify-end">
+              <Link
+                className="py-[13px] px-[41px] bg-[#303030] text-[22px] font-[600] text-[#FFFFFF] rounded-[99px]"
+                href="/create-workbook"
+              >
+                문제 만들기
+              </Link>
+            </div>
+          </div>
+          <div className="pt-[37px] pl-[34px] pr-[45px] pb-[24px] flex-1 bg-[#9BEDFF] rounded-[24px]">
+            <p className="text-[24px] font-[600] text-[#517D7D]">
+              서비스 소개 | 면접 준비의 시작!
+            </p>
+            <p className="text-[32px] font-[600]">실시간으로 업데이트되는</p>
+            <p className="text-[32px] font-[600]">문제들 풀어볼까요?</p>
+            <div className="flex justify-end">
+              <Link
+                className="py-[13px] px-[41px] bg-[#303030] text-[22px] font-[600] text-[#FFFFFF] rounded-[99px]"
+                href="/solve-workbook"
+              >
+                면접 질문 풀기
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="flex-1 bg-86A1FF rounded-2xl">
-          프론트엔드 신입 기술 면접 최다 출제 문제집
+        <div className="flex flex-1 flex-col justify-between bg-[#839EFF] rounded-[24px] pl-[68px] py-[40px]">
+          <div className="flex flex-col text-[#FFFFFF]">
+            <p className="text-[32px] font-[500]">프론트엔드 신입 기술면접</p>
+            <p className="text-[42px] font-[700]">최다 출제 문제집</p>
+          </div>
+          <div className="flex items-end gap-0 text-[42px] font-[500] text-[#FFFFFF]">
+            +20문제
+          </div>
         </div>
       </div>
     </div>

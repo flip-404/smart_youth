@@ -1,7 +1,20 @@
+"use client";
+
+import { useState } from "react";
+
 export default function SupportDropDown() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handdleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <>
-      <div className="flex justify-between bg-slate-300 px-30px py-25px items-center">
+    <div className="flex flex-col gap-[20px] animate">
+      <div
+        onClick={handdleClick}
+        className="flex justify-between bg-slate-300 px-30px py-25px items-center hover:cursor-pointer"
+      >
         <p>[똑똑한 청년들]은 어떤 서비스 인가요?</p>
         <svg
           width="24"
@@ -16,6 +29,20 @@ export default function SupportDropDown() {
           />
         </svg>
       </div>
-    </>
+      {isOpen && (
+        <div className="dropdown-content">
+          [똑똑한 청년들]은 개발직무 취업 준비중이신 청년분들의 면접을 준비를
+          도와주는 서비스 입니다. [똑똑한 청년들]은 개발직무 취업 준비중이신
+          청년분들의 면접을 준비를 도와주는 서비스 입니다. [똑똑한 청년들]은
+          개발직무 취업 준비중이신 청년분들의 면접을 준비를 도와주는 서비스
+          입니다.[똑똑한 청년들]은 개발직무 취업 준비중이신 청년분들의 면접을
+          준비를 도와주는 서비스 입니다.[똑똑한 청년들]은 개발직무 취업
+          준비중이신 청년분들의 면접을 준비를 도와주는 서비스 입니다.[똑똑한
+          청년들]은 개발직무 취업 준비중이신 청년분들의 면접을 준비를 도와주는
+          서비스 입니다.[똑똑한 청년들]은 개발직무 취업 준비중이신 청년분들의
+          면접을 준비를 도와주는 서비스 입니다.
+        </div>
+      )}
+    </div>
   );
 }
