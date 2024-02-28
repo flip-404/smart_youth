@@ -1,7 +1,4 @@
-import CreateBanner from "./CreateBanner";
-import MyWorkbook from "./MyWorkbook";
-
-export default function WorkbookCard() {
+export default function SolveWorkbookCard() {
   return (
     <div className="flex-1 flex flex-col gap-[29px]">
       <div className=" px-[30px] py-[40px] text-[26px] font-[500] bg-[#D9D9D9] rounded-[20px]">
@@ -9,10 +6,10 @@ export default function WorkbookCard() {
         <br /> 물어보는 질문 TOP 10
       </div>
       <div className="flex justify-between items-center">
-        <div className="bg-[#FFF6A5] px-[20px] py-[5px] text-[18px] font-[600] rounded-[20px]">
-          전체공개
+        <div className="bg-[#CCCCCC] bg-opacity-40 px-[20px] py-[5px] text-[18px] font-[600] rounded-[20px]">
+          Front
         </div>
-        <div className="text-[#313131] text-[18px] font-[400]">수정하기</div>
+        <div className="text-[#313131] text-[18px] font-[400]">24-01-25</div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import WorkbookCard from "../WorkbookCard";
+import PopularWorkbookCard from "./PopularWorkbookCard";
 
 export default function TrendyWorkbook() {
   return (
@@ -10,9 +10,9 @@ export default function TrendyWorkbook() {
         </p>
       </div>
       <div className="flex gap-[20px]">
-        <WorkbookCard />
-        <WorkbookCard />
-        <WorkbookCard />
+        <PopularWorkbookCard />
+        <PopularWorkbookCard />
+        <PopularWorkbookCard />
       </div>
     </div>
   );

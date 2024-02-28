@@ -1,5 +1,5 @@
 import CreateBanner from "./CreateBanner";
-import MyWorkbook from "./MyWorkbook";
+import MyWorkbook from "../MyWorkbook";
 
 export default function FirstSection() {
   return (

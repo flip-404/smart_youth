@@ -1,4 +1,4 @@
-import WorkbookCard from "./WorkbookCard";
+import MyWorkbookCard from "./create-workbook/MyWorkbookCard";
 
 export default function MyWorkbook() {
   return (
@@ -7,16 +7,16 @@ export default function MyWorkbook() {
         내가 만든 문제들 <span className="text-[#8D8D8D]">8</span>
       </p>
       <div className="flex flex-wrap gap-[20px]">
-        <WorkbookCard />
-        <WorkbookCard />
-        <WorkbookCard />
-        <WorkbookCard />
+        <MyWorkbookCard />
+        <MyWorkbookCard />
+        <MyWorkbookCard />
+        <MyWorkbookCard />
       </div>
       <div className="flex flex-wrap gap-[20px]">
-        <WorkbookCard />
-        <WorkbookCard />
-        <WorkbookCard />
-        <WorkbookCard />
+        <MyWorkbookCard />
+        <MyWorkbookCard />
+        <MyWorkbookCard />
+        <MyWorkbookCard />
       </div>
     </div>
   );

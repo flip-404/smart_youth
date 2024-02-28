@@ -1,7 +1,7 @@
-import { ProblemsIcon } from "../../public/svgs";
-import CategoryChip from "./CategoryChip";
+import { ProblemsIcon } from "../../../public/svgs";
+import CategoryChip from "../CategoryChip";
 
-export default function WorkbookCard() {
+export default function PopularWorkbookCard() {
   return (
     <>
       <div className="flex-1 flex-col">
