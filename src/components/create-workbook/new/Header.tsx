@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <div className="fixed h-[80px] z-[8] bg-white w-full px-[80px] flex gap-[20px] items-center">
+    <div className="absolute h-[80px] z-[8] bg-white w-full px-[80px] flex gap-[20px] items-center">
       <svg
         width="36"
         height="36"

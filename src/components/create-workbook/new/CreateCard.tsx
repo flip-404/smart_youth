@@ -4,7 +4,7 @@ export default function CreateCard() {
       <div className="flex flex-col items-center gap-[16px] w-full">
         <p className="text-[14px] text-[#7B7B7B] font-[700]">문제 1</p>
         <input
-          className="flex text-center text-[26px] font-[700] w-3/4"
+          className="flex text-center text-[26px] font-[700] w-3/4 focus:outline-none"
           placeholder="문제 제목을 입력하세요."
         />
       </div>
