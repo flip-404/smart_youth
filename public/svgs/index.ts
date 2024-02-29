@@ -5,6 +5,8 @@ import MyIcon from "./my_icon.svg";
 import ProblemsIcon from "./problems_icon.svg";
 import CircleIcon from "./circle_icon.svg";
 import CircleBookmarkIcon from "./circle_bookmark_icon.svg";
+import CirclePrevIcon from "./circle_prev_icon.svg";
+import CircleNextIcon from "./circle_next_icon.svg";
 
 export {
   HomeIcon,
@@ -14,4 +16,6 @@ export {
   ProblemsIcon,
   CircleIcon,
   CircleBookmarkIcon,
+  CirclePrevIcon,
+  CircleNextIcon,
 };
