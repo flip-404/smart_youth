@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import SolveWorkbookCard from "./SolveWorkbookCard";
 import CategoryTab from "./CategoryTab";
 import WorkbookInfoModal from "../WorkbookInfoModal";
+import WorkbookListItem from "../WorkbookListItem";
 
 const WorkbookListView = () => {
   const [currentTab, setCurrentTab] = useState("bookmarked");
@@ -132,7 +133,17 @@ const PopularTabContent = ({ content, handleModalOpen }: ContentProps) => {
 };
 
 const RealtimeTabContent = ({ content, handleModalOpen }: ContentProps) => {
-  return <></>;
+  return (
+    <>
+      <WorkbookListItem />
+      <WorkbookListItem />
+      <WorkbookListItem />
+      <WorkbookListItem />
+      <WorkbookListItem />
+      <WorkbookListItem />
+      <WorkbookListItem />
+    </>
+  );
 };
 
 export default WorkbookListView;

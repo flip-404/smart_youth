@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import { CircleBookmarkIcon } from "../../public/svgs";
 
 type WorkbookInfoModalProps = {
@@ -5,6 +6,8 @@ type WorkbookInfoModalProps = {
 };
 
 export default function WorkbookInfoModal({ onClose }: WorkbookInfoModalProps) {
+  const router = useRouter();
+
   const handleOutsideClick = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
@@ -46,10 +49,16 @@ export default function WorkbookInfoModal({ onClose }: WorkbookInfoModalProps) {
         <div className="flex justify-between px-[64px] pb-[40px]">
           <CircleBookmarkIcon />
           <div className="flex gap-[20px]">
-            <button className="py-[12px] px-[36px] text-[24px] font-[600] bg-[#E4E7EC] border border-[#98A2B3] rounded-[12px]">
+            <button
+              onClick={() => router.push("/solve-workbook/detail")}
+              className="py-[12px] px-[36px] text-[24px] font-[600] bg-[#E4E7EC] border border-[#98A2B3] rounded-[12px]"
+            >
               순서대로 풀기
             </button>
-            <button className="py-[12px] px-[36px] text-[24px] font-[600] bg-[#E4E7EC] border border-[#98A2B3] rounded-[12px]">
+            <button
+              onClick={() => router.push("/solve-workbook/detail")}
+              className="py-[12px] px-[36px] text-[24px] font-[600] bg-[#E4E7EC] border border-[#98A2B3] rounded-[12px]"
+            >
               무작위로 풀기
             </button>
           </div>

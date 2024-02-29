@@ -7,7 +7,7 @@ export default function RecentWorkbook() {
         <p className="text-[32px] font-[700]">실시간 등록된 면접 질문들📝</p>
         <p>더보기</p>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col">
         <WorkbookListItem />
         <WorkbookListItem />
         <WorkbookListItem />
