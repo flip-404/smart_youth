@@ -17,7 +17,11 @@ const WorkbookListView = () => {
   };
 
   const handleModalOpen = () => {
-    setIsModalOpen(!isModalOpen);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
   };
 
   const renderTabContent = () => {
@@ -79,7 +83,7 @@ const WorkbookListView = () => {
           문제 더보기
         </button>
       </div>
-      <WorkbookInfoModal />
+      {isModalOpen && <WorkbookInfoModal onClose={handleModalClose} />}
     </div>
   );
 };
