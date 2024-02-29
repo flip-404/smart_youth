@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import SolveWorkbookCard from "./SolveWorkbookCard";
 import CategoryTab from "./CategoryTab";
+import WorkbookInfoModal from "../WorkbookInfoModal";
 
 const WorkbookListView = () => {
   const [currentTab, setCurrentTab] = useState("bookmarked");
@@ -15,14 +16,33 @@ const WorkbookListView = () => {
     setCurrentTab(tab);
   };
 
+  const handleModalOpen = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   const renderTabContent = () => {
     switch (currentTab) {
       case "bookmarked":
-        return <BookmarkedTabContent content={bookmarkedContent} />;
+        return (
+          <BookmarkedTabContent
+            handleModalOpen={handleModalOpen}
+            content={bookmarkedContent}
+          />
+        );
       case "popular":
-        return <PopularTabContent content={popularContent} />;
+        return (
+          <PopularTabContent
+            handleModalOpen={handleModalOpen}
+            content={popularContent}
+          />
+        );
       case "realtime":
-        return <RealtimeTabContent content={realtimeContent} />;
+        return (
+          <RealtimeTabContent
+            handleModalOpen={handleModalOpen}
+            content={realtimeContent}
+          />
+        );
       default:
         return null;
     }
@@ -59,53 +79,55 @@ const WorkbookListView = () => {
           문제 더보기
         </button>
       </div>
+      <WorkbookInfoModal />
     </div>
   );
 };
 
 type ContentProps = {
   content: Array<any>;
+  handleModalOpen: () => void;
 };
 
-const BookmarkedTabContent = ({ content }: ContentProps) => {
+const BookmarkedTabContent = ({ content, handleModalOpen }: ContentProps) => {
   return (
     <div className="flex flex-col gap-[56px]">
       <div className="flex flex-wrap gap-[20px]">
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
       </div>
       <div className="flex flex-wrap gap-[20px]">
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
       </div>
     </div>
   );
 };
 
-const PopularTabContent = ({ content }: ContentProps) => {
+const PopularTabContent = ({ content, handleModalOpen }: ContentProps) => {
   return (
     <div className="flex flex-col gap-[56px]">
       <div className="flex flex-wrap gap-[20px]">
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
       </div>
       <div className="flex flex-wrap gap-[20px]">
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
-        <SolveWorkbookCard />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
+        <SolveWorkbookCard handleModalOpen={handleModalOpen} />
       </div>
     </div>
   );
 };
 
-const RealtimeTabContent = ({ content }: ContentProps) => {
+const RealtimeTabContent = ({ content, handleModalOpen }: ContentProps) => {
   return <></>;
 };
 
