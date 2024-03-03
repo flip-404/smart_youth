@@ -29,6 +29,16 @@
     transition: width 0.5s ease;
   }
 
+  .step2-card-inactive {
+    box-shadow: 0px 0px 20px 0px #00000014;
+    border: 1px solid #f2f4f7;
+  }
+
+  .step2-card-active {
+    border: 1px solid #abc2ff;
+    box-shadow: 0px 0px 20px 0px #839eff4d;
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
