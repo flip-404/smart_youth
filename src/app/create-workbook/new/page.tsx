@@ -1,15 +1,62 @@
+"use client";
+
 import CreateCard from "@/components/create-workbook/new/CreateCard";
+import Step1Card from "@/components/create-workbook/new/CreationCard/Step1Card";
+import Step2Card from "@/components/create-workbook/new/CreationCard/Step2Card";
+import Step3Card from "@/components/create-workbook/new/CreationCard/Step3Card";
+import Step4Card from "@/components/create-workbook/new/CreationCard/Step4Card";
 import Footer from "@/components/create-workbook/new/Footer";
-import Header from "@/components/create-workbook/new/Header";
+import Header from "@/components/create-workbook/new/Header/Header";
+import { useState } from "react";
+
+type Problem = {
+  seq: number;
+  question: string;
+  answer: string;
+};
+
+type NewWorkbook = {
+  title: string;
+  description: string;
+  problems: Problem[];
+  author: string;
+  problemsCount: number;
+  createDate: string;
+  isPublic: boolean;
+};
 
 export default function CreateNew() {
-  // pt-[60px] px-[80px] gap-[80px] pb-[100px]
+  const [creationStep, setCreationStep] = useState(1);
+  const [newWorkbook, setNewWorkbook] = useState<NewWorkbook>({
+    title: "테스트 제목",
+    description: "테스트 제목",
+    problems: [],
+    author: "김땡떙",
+    problemsCount: 15,
+    createDate: "3일전",
+    isPublic: true,
+  });
+
+  const renderCreationCardbyStep = () => {
+    switch (creationStep) {
+      case 1:
+        return <Step1Card />;
+      case 2:
+        return <Step2Card />;
+      case 3:
+        return <Step3Card />;
+      case 4:
+        return <Step4Card />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="relative w-full h-basic-section">
-      <Header />
+      <Header step={creationStep} />
       <div className="relative w-full h-basic-section flex flex-col bg-[#F0F0F0] px-[205px] py-[140px]">
-        <CreateCard />
+        {renderCreationCardbyStep()}
       </div>
       <Footer />
     </div>
