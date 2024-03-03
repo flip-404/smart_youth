@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={cls(inter.className)}>
         <Header />
         <SideBar />
-        <div className="bg-white pt-80px pl-280px">{children}</div>
+        <div className="bg-white pt-80px">{children}</div>
       </body>
     </html>
   );

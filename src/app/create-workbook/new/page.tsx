@@ -53,7 +53,7 @@ export default function CreateNew() {
   };
 
   return (
-    <div className="relative w-full h-basic-section">
+    <div className="pl-[80px] relative w-full h-basic-section">
       <Header step={creationStep} />
       <div className="relative w-full h-basic-section flex flex-col bg-[#F0F0F0] px-[205px] py-[140px]">
         {renderCreationCardbyStep()}
