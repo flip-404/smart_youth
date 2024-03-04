@@ -42,6 +42,7 @@ export default function Step2Card({ handleNextStep }: Step2CardProps) {
       </div>
       <div>
         <button
+          onClick={() => handleNextStep(isPublic)}
           disabled={isPublic === null}
           className={cls(
             isPublic !== null ? "bg-[#303030]" : "bg-[#D0D5DD]",
