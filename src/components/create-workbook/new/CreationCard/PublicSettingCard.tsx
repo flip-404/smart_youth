@@ -53,7 +53,7 @@ export default function PublicSettingCard({
           </>
         )}
       </p>
-      <div className="flex">
+      <div className="flex gap-[4px]">
         {type === "public"
           ? featureChips.public.map((feature, index) => (
               <div
