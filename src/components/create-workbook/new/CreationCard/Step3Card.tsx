@@ -5,7 +5,11 @@ import { useForm } from "react-hook-form";
 import { NextArrowIcon } from "../../../../../public/svgs";
 import ErrorMessage from "@/components/ErrorMessage";
 
-export default function Step3Card() {
+type Step3CardProps = {
+  handleNextStep: () => void;
+};
+
+export default function Step3Card({ handleNextStep }: Step3CardProps) {
   return (
     <div className="createcard-shadow h-full flex flex-col items-center px-[40px] py-[30px] bg-[#FFFFFF] rounded-[24px] gap-[26px]">
       <div className="w-full flex flex-col items-center gap-[4px]">
@@ -21,7 +25,10 @@ export default function Step3Card() {
           placeholder="📝 이 곳을 클릭하여 내가 생각한 답변을 입력해주세요."
         />
         <div className="flex justify-center">
-          <button className="flex bg-[#303030] text-white text-[24px] font-[600] py-[12px] px-[20px]   rounded-full">
+          <button
+            onClick={handleNextStep}
+            className="flex bg-[#303030] text-white text-[24px] font-[600] py-[12px] px-[20px]   rounded-full"
+          >
             다음 <NextArrowIcon />
           </button>
         </div>

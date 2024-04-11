@@ -47,7 +47,9 @@ export default function CreateNew() {
     setCreationStep(3);
   };
 
-  const handleNextStepFrom3 = (formData: Step1Form) => {};
+  const handleNextStepFrom3 = () => {
+    setCreationStep(4);
+  };
 
   const handleNextStepFrom4 = (formData: Step1Form) => {};
 
@@ -58,7 +60,7 @@ export default function CreateNew() {
       case 2:
         return <Step2Card handleNextStep={handleNextStepFrom2} />;
       case 3:
-        return <Step3Card />;
+        return <Step3Card handleNextStep={handleNextStepFrom3} />;
       case 4:
         return <Step4Card />;
       default:

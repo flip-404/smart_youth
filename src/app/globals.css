@@ -38,6 +38,10 @@
     border: 1px solid #abc2ff;
     box-shadow: 0px 0px 20px 0px #839eff4d;
   }
+  .step4-card-shadow {
+    border: 1px solid #839eff;
+    box-shadow: 0px 0px 20px 0px #466bef33;
+  }
 
   @keyframes fadeIn {
     from {

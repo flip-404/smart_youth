@@ -5,7 +5,7 @@ export default function PopularWorkbookCard() {
   return (
     <>
       <div className="flex-1 flex-col">
-        <div className="flex flex-col justify-between w-full px-[32px] py-[33px] bg-[#CDD8FF] rounded-[20px] h-[207px]">
+        <div className="flex flex-col justify-between w-full px-[32px] py-[33px] bg-[#CDD8FF] rounded-[20px] gap-[20px]">
           <p className="font-[600] text-[24px]">
             요즘 대세 AI 개발자에게 묻는 질문 TOP 10
           </p>
