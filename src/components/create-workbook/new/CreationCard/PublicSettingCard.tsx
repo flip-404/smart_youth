@@ -24,7 +24,7 @@ export default function PublicSettingCard({
       }}
       className={cls(
         isPublic === type ? "step2-card-active" : "step2-card-inactive",
-        "flex-1 flex flex-col step2-card-shadow rounded-[24px] p-[20px] gap-[12px] hover:cursor-pointer"
+        "flex w-2/5 flex-col justify-between step2-card-shadow rounded-[24px] p-[10px] gap-[4px] hover:cursor-pointer"
       )}
     >
       <div className="flex flex-col gap-[12px]">

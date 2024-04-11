@@ -17,9 +17,9 @@ export default function Step2Card({ handleNextStep }: Step2CardProps) {
   };
 
   return (
-    <div className="createcard-shadow h-full flex flex-col items-center px-[40px] py-[30px] bg-[#FFFFFF] rounded-[24px] gap-[40px]">
+    <div className="createcard-shadow h-full flex flex-col justify-center items-center bg-[#FFFFFF] rounded-[24px] gap-[10px]">
       <div className="flex flex-col text-center justify-center gap-[4px]">
-        <p className="text-[38px] font-[700] text-[#313131]">
+        <p className="text-[28px] font-[700] text-[#313131]">
           문제집의 공개 여부를 선택해 주세요
         </p>
         <p className="text-[20px] font-[500] text-[#667085]">
@@ -28,7 +28,7 @@ export default function Step2Card({ handleNextStep }: Step2CardProps) {
         </p>
       </div>
 
-      <div className="flex w-full gap-[48px]">
+      <div className="flex justify-center w-full gap-[18px]">
         <PublicSettingCard
           isPublic={isPublic}
           handdleCardClick={handdleCardClick}

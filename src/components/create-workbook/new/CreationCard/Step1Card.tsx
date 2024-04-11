@@ -28,9 +28,9 @@ export default function Step1Card({ handleNextStep }: Step1CardProps) {
 
   return (
     <div className="createcard-shadow h-full flex flex-col items-center px-[80px] py-[60px] bg-[#FFFFFF] rounded-[24px]">
-      <div className="flex h-full w-full flex-col gap-[20px]">
+      <div className="flex h-full w-full flex-col justify-center gap-[20px]">
         <div className="flex flex-col items-center">
-          <p className="text-[38px] font-[700] text-[#313131]">
+          <p className="text-[28px] font-[700] text-[#313131]">
             문제집을 만들어 볼까요?
           </p>
           <p className="text-[20px] font-[500] text-[#667085]">

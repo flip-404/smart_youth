@@ -67,11 +67,12 @@ export default function CreateNew() {
         return null;
     }
   };
+  80;
 
   return (
-    <div className="pl-[80px] relative w-full h-basic-section">
+    <div className="pl-[80px] relative w-full h-basic-section overflow-hidden">
       <Header step={creationStep} />
-      <div className="relative w-full h-basic-section flex flex-col bg-[#F0F0F0] px-[205px] py-[140px]">
+      <div className="min-w-[1224px] h-basic-section relative w-full flex flex-col bg-[#F0F0F0] px-[205px] py-[140px]">
         {renderCreationCardbyStep()}
       </div>
       <Footer />

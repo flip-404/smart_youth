@@ -20,8 +20,8 @@ export default function Step3Card({ handleNextStep }: Step3CardProps) {
         />
       </div>
       <div className="w-full flex flex-1 flex-col gap-[30px]">
-        <input
-          className="input--reset createcard-shadow flex flex-1 w-full px-[14px] py-[4px] h-auto placeholder:text-center placeholder:text-[26px] placeholder:font-[600] text-[26px] font-[500] focus:bg-[#F9FAFF] border border-solid border-transparent focus:border focus:border-solid focus:border-[#ABC2FF] rounded-[12px]"
+        <textarea
+          className="resize-none createcard-shadow flex flex-1 w-full px-[14px] py-[4px] h-auto placeholder:text-center placeholder:text-[26px] placeholder:font-[600] text-[26px] font-[500] focus:bg-[#F9FAFF] border border-solid border-transparent focus:border focus:border-solid focus:border-[#ABC2FF] rounded-[12px]"
           placeholder="📝 이 곳을 클릭하여 내가 생각한 답변을 입력해주세요."
         />
         <div className="flex justify-center">

@@ -1,7 +1,7 @@
 export default function Step4Card() {
   return (
-    <div className="step4-card-shadow flex flex-col py-[40px] px-[100px] gap-[40px] items-center w-full h-full bg-white rounded-[24px]">
-      <div className="flex flex-col gap-[16px]">
+    <div className="step4-card-shadow flex flex-col justify-center px-[100px] items-center w-full h-full bg-white rounded-[24px]">
+      <div className="flex flex-col gap-[6px]">
         <div className="flex flex-col gap-[8px] items-center">
           <div className="flex">
             <div className="flex  rounded-[99px] bg-[#F2F4F7]">
@@ -13,7 +13,7 @@ export default function Step4Card() {
               </div>
             </div>
           </div>
-          <p className="text-[32px] font-[700]">
+          <p className="text-[28px] font-[700]">
             모든 준비가 끝났습니다, 이대로 문제집을 발행할까요?&nbsp;
             <span className="text-[#839EFF]">✓</span>
           </p>
