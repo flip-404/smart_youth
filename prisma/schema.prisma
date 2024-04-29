@@ -1,0 +1,129 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = []
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  // 이메일, 비밀번호, 닉네임, 직무, 한줄소개
+
+  id          Int        @id @default(autoincrement())
+  email       String     @unique
+  password    String
+  nickname    String     @unique
+  job         String
+  description String?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  tokens      Token[]
+  workbooks   Workbook[]
+  comments    Comment[]
+  bookmark    Bookmark[]
+  like        Like[]
+  dislike     DisLike[]
+}
+
+model Bookmark {
+  id         Int      @id @default(autoincrement())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     Int
+  workbook   Workbook @relation(fields: [workbookId], references: [id])
+  workbookId Int
+
+  @@index([userId])
+  @@index([workbookId])
+}
+
+model Token {
+  id        Int      @id @default(autoincrement())
+  payload   String   @unique
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model Category {
+  id        Int        @id @default(autoincrement())
+  name      String
+  workbooks Workbook[]
+}
+
+model Workbook {
+  id          Int        @id @default(autoincrement())
+  title       String
+  description String?
+  author      User       @relation(fields: [authorId], references: [id])
+  authorId    Int
+  problems    Problem[]
+  createdAt   DateTime   @default(now())
+  category    Category?  @relation(fields: [categoryId], references: [id])
+  categoryId  Int?
+  bookmark    Bookmark[]
+
+  @@index([authorId])
+  @@index([categoryId])
+}
+
+// 스키마 이름 수정 필요
+model Problem {
+  id         Int       @id @default(autoincrement())
+  question   String
+  answer     String
+  workbook   Workbook  @relation(fields: [workbookId], references: [id])
+  workbookId Int
+  comments   Comment[]
+
+  @@index([workbookId])
+}
+
+model Comment {
+  id        Int       @id @default(autoincrement())
+  content   String
+  user      User      @relation(fields: [userId], references: [id])
+  userId    Int
+  problem   Problem   @relation(fields: [problemId], references: [id])
+  problemId Int
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  like      Like[]
+  dislike   DisLike[]
+
+  @@index([userId])
+  @@index([problemId])
+}
+
+model Like {
+  id        Int     @id @default(autoincrement())
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    Int
+  comment   Comment @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  commentId Int
+
+  @@index([userId])
+  @@index([commentId])
+}
+
+model DisLike {
+  id        Int     @id @default(autoincrement())
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    Int
+  comment   Comment @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  commentId Int
+
+  @@index([userId])
+  @@index([commentId])
+}
