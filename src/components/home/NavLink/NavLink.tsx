@@ -1,19 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import cls from "@/utils/cls";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import HomeIcon from "./HomeIcon";
-import CreateIcon from "./CreateIcon";
-import SolveIcon from "./SolveIcon";
-import MyIcon from "./MyIcon";
 
 interface NavLinkProps {
   href: string;
   label: string;
-  imgSrc: string;
+  imgSrc: JSX.Element;
   alt: string;
 }
 
@@ -23,27 +18,6 @@ export default function NavLink({ href, label, imgSrc, alt }: NavLinkProps) {
 
   const handleTransitionEnd = () => {
     setShowText(!showText);
-  };
-
-  const renderIcons = () => {
-    switch (href) {
-      case "/":
-        return (
-          <HomeIcon pathFill={href === pathname ? "#1D2939" : "#667085"} />
-        );
-      case "/create-workbook":
-        return (
-          <CreateIcon pathFill={href === pathname ? "#1D2939" : "#667085"} />
-        );
-      case "/solve-workbook":
-        return (
-          <SolveIcon pathFill={href === pathname ? "#1D2939" : "#667085"} />
-        );
-      case "/my":
-        return <MyIcon pathFill={href === pathname ? "#1D2939" : "#667085"} />;
-      default:
-        return <></>;
-    }
   };
 
   return (
@@ -56,14 +30,14 @@ export default function NavLink({ href, label, imgSrc, alt }: NavLinkProps) {
       )}
       onTransitionEnd={handleTransitionEnd}
     >
-      <Link href={href} className="flex items-center gap-[12px]">
-        {renderIcons()}
+      <Link href={href} className="flex items-center gap-[12px] fill-black">
+        {imgSrc}
         {pathname !== "/create-workbook/new" && showText && (
           <p
             className={cls(
               pathname === href
-                ? "text-sideBar-active font-[800]"
-                : "text-sideBar-inactive font-[600]"
+                ? "text-[#101828] text-[1rem] font-[600] leading-[1.5rem]"
+                : "text-[#344054] text-[1rem] font-[400] leading-[1.5rem]"
             )}
           >
             {label}

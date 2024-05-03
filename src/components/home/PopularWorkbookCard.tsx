@@ -1,4 +1,3 @@
-import { ProblemsIcon } from "../../../public/svgs";
 import CategoryChip from "../CategoryChip";
 
 export default function PopularWorkbookCard() {
@@ -10,7 +9,7 @@ export default function PopularWorkbookCard() {
             요즘 대세 AI 개발자에게 묻는 질문 TOP 10
           </p>
           <div className="flex gap-[2px]">
-            <ProblemsIcon />
+            {/* <ProblemsIcon /> */}
             <p>10문제 </p>
           </div>
         </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { CircleNextIcon, CirclePrevIcon } from "../../../../public/svgs";
 import cls from "@/utils/cls";
 
 type SolveCardProps = {
@@ -84,13 +83,9 @@ export default function SolveCard({ isAnswerOpen }: SolveCardProps) {
           </svg>
         </div>
         <div className="flex gap-[41px]">
-          <button className="button--reset">
-            <CirclePrevIcon />
-          </button>
+          <button className="button--reset">{/* <CirclePrevIcon /> */}</button>
           <button className="text-[20px] font-[600] text-[#313131]">1/5</button>
-          <button className="button--reset">
-            <CircleNextIcon />
-          </button>
+          <button className="button--reset">{/* <CircleNextIcon /> */}</button>
         </div>
       </div>
     </div>

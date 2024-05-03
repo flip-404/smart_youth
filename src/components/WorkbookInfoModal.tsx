@@ -1,5 +1,4 @@
 import { useRouter } from "next/navigation";
-import { CircleBookmarkIcon } from "../../public/svgs";
 
 type WorkbookInfoModalProps = {
   onClose: () => void;
@@ -47,7 +46,7 @@ export default function WorkbookInfoModal({ onClose }: WorkbookInfoModalProps) {
           <div className="px-[20px] text-[20px] font-[500]">10문제</div>
         </div>
         <div className="flex justify-between px-[64px] pb-[40px]">
-          <CircleBookmarkIcon />
+          {/* <CircleBookmarkIcon /> */}
           <div className="flex gap-[20px]">
             <button
               onClick={() => router.push("/solve-workbook/detail")}

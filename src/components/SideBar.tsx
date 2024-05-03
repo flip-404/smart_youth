@@ -2,43 +2,52 @@
 
 import Link from "next/link";
 import NavLink from "./home/NavLink/NavLink";
+import Image from "next/image";
+import HomeIcon from "/public/sidebar/HomeIcon.svg";
+import CreateIcon from "/public/sidebar/CreateIcon.svg";
+import SolveIcon from "/public/sidebar/SolveIcon.svg";
+import MyActivityIcon from "/public/sidebar/MyActivityIcon.svg";
 
 export default function SideBar() {
-  // 여기부터
-
   return (
-    <div className="flex flex-col justify-between pb-[100px] fixed left-0 h-screen bg-white sidebar-shadow z-[9]">
-      <div className="flex flex-col gap-46px pt-130px">
+    <div className="z-[9] pt-[3rem] fixed left-0 flex flex-col justify-between w-[11.25rem] h-screen bg-white sidebar-shadow items-center">
+      <div className="flex flex-col mt-[3rem] gap-[2rem]">
         <NavLink
           href="/"
-          imgSrc="/svgs/home_icon.svg"
+          imgSrc={<HomeIcon />}
           alt="홈 링크 아이콘"
           label="홈"
         />
         <NavLink
           href="/create-workbook"
-          imgSrc="/svgs/create_icon.svg"
+          imgSrc={<CreateIcon />}
           alt="문제 만들기 아이콘"
           label="문제 만들기"
         />
         <NavLink
           href="/solve-workbook"
-          imgSrc="/svgs/solve_icon.svg"
+          imgSrc={<SolveIcon />}
           alt="문제 풀기 아이콘"
           label="문제 풀기"
         />
         <NavLink
           href="/my"
-          imgSrc="/svgs/my_icon.svg"
+          imgSrc={<MyActivityIcon />}
           alt="마이페이지 아이콘"
-          label="My"
+          label="내 활동"
         />
       </div>
-      <div className="flex pl-[72px]">
+      <div className="flex mb-[4.5rem]">
         <Link
           href="/signIn"
           className="flex text-l text-white bg-black py-3 px-4 font-semibold rounded-full"
         >
+          <Image
+            src={`/sidebar/profile_icon.svg`}
+            alt={"ddd"}
+            width="64"
+            height="64"
+          />
           가입·로그인
         </Link>
       </div>

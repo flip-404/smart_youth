@@ -8,7 +8,7 @@ import SideBar from "@/components/SideBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "똑똑한 청년들",
+  title: "똑디 | 스마트한 면접 도우미",
   description: "면접 도우미",
 };
 

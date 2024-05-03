@@ -1,4 +1,4 @@
-import { PrivateIcon, PublicIcon } from "../../../public/svgs";
+// import { PrivateIcon, PublicIcon } from "../../../public/svgs";
 
 type MyWorkbookCardProps = {
   title: string;
@@ -23,15 +23,7 @@ export default function MyWorkbookCard({
       </div>
       <div className="flex justify-between items-center">
         <div className="flex gap-[6px] items-center text-[18px] font-[600]">
-          {isPublic ? (
-            <>
-              <PublicIcon /> 전체공개
-            </>
-          ) : (
-            <>
-              <PrivateIcon /> 비공개
-            </>
-          )}
+          {isPublic ? <>전체공개</> : <>비공개</>}
         </div>
         <div className="text-[#313131] text-[18px] font-[500]">수정하기</div>
       </div>

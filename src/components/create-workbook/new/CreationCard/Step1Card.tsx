@@ -1,7 +1,6 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { NextArrowIcon } from "../../../../../public/svgs";
 import ErrorMessage from "@/components/ErrorMessage";
 import cls from "@/utils/cls";
 import { Step1Form } from "@/types";
@@ -117,7 +116,7 @@ export default function Step1Card({ handleNextStep }: Step1CardProps) {
                 "flex text-white text-[24px] font-[600] py-[12px] px-[20px]   rounded-full"
               )}
             >
-              다음 <NextArrowIcon />
+              다음
             </button>
           </div>
         </form>

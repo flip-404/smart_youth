@@ -2,7 +2,6 @@
 
 import cls from "@/utils/cls";
 import { useForm } from "react-hook-form";
-import { NextArrowIcon } from "../../../../../public/svgs";
 import ErrorMessage from "@/components/ErrorMessage";
 
 type Step3CardProps = {
@@ -29,7 +28,7 @@ export default function Step3Card({ handleNextStep }: Step3CardProps) {
             onClick={handleNextStep}
             className="flex bg-[#303030] text-white text-[24px] font-[600] py-[12px] px-[20px]   rounded-full"
           >
-            다음 <NextArrowIcon />
+            다음
           </button>
         </div>
       </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { CardPublicIcon, NextArrowIcon } from "../../../../../public/svgs";
 import PublicSettingCard from "./PublicSettingCard";
 import cls from "@/utils/cls";
 
@@ -49,7 +48,7 @@ export default function Step2Card({ handleNextStep }: Step2CardProps) {
             "flex text-white text-[24px] font-[600] py-[12px] px-[20px]   rounded-full"
           )}
         >
-          다음 <NextArrowIcon />
+          다음
         </button>
       </div>
     </div>

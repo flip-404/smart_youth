@@ -1,5 +1,4 @@
 import cls from "@/utils/cls";
-import { CardPublicIcon, CardPrivateIcon } from "../../../../../public/svgs";
 
 type PublicSettingCardProps = {
   type: string;
@@ -28,7 +27,7 @@ export default function PublicSettingCard({
       )}
     >
       <div className="flex flex-col gap-[12px]">
-        {type === "public" ? <CardPublicIcon /> : <CardPrivateIcon />}
+        {/* {type === "public" ? <CardPublicIcon /> : <CardPrivateIcon />} */}
         <div className="flex flex-col">
           <p className="text-[18px] font-[500] text-[#667085]">
             {type === "public" ? "공개" : "비공개"}
