@@ -7,6 +7,7 @@ import HomeIcon from "/public/sidebar/HomeIcon.svg";
 import CreateIcon from "/public/sidebar/CreateIcon.svg";
 import SolveIcon from "/public/sidebar/SolveIcon.svg";
 import MyActivityIcon from "/public/sidebar/MyActivityIcon.svg";
+import ProfileIcon from "/public/sidebar/ProfileIcon.svg";
 
 export default function SideBar() {
   return (
@@ -38,17 +39,11 @@ export default function SideBar() {
         />
       </div>
       <div className="flex mb-[4.5rem]">
-        <Link
-          href="/signIn"
-          className="flex text-l text-white bg-black py-3 px-4 font-semibold rounded-full"
-        >
-          <Image
-            src={`/sidebar/profile_icon.svg`}
-            alt={"ddd"}
-            width="64"
-            height="64"
-          />
-          가입·로그인
+        <Link href="/signIn" className="flex flex-col gap-[8px]">
+          <ProfileIcon />
+          <p className="text-[#5C5C5C] text-[1rem] font-[600] leading-[1.5rem]">
+            회원가입·로그인
+          </p>
         </Link>
       </div>
     </div>

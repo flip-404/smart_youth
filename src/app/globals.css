@@ -4,6 +4,11 @@
 
 /* adding components classes */
 @layer components {
+  /* @media all and (max-width: 750px) {
+    html {
+      font-size: 50%;
+    }
+  } */
   .button--reset {
     border: 0;
     outline: 0;

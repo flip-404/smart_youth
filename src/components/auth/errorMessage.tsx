@@ -4,7 +4,9 @@ type ErrorMessageProps = {
 
 function ErrorMessage({ message }: ErrorMessageProps) {
   return (
-    <div className="flex justify-start text-xs text-red-500">{message}</div>
+    <div className="flex justify-start text-[0.875rem] text-[#D92222]">
+      {message}
+    </div>
   );
 }
 
