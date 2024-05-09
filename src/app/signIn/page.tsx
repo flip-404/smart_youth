@@ -21,9 +21,12 @@ export default function SignIn() {
     <div className="w-full flex justify-center h-screen">
       <div className="flex flex-col items-center gap-[3rem]">
         <div className="flex flex-col items-center gap-[0.5rem]">
-          <h1 className="mt-[3.75rem] text-[#101828] text-[2.5rem] font-[600] leading-[3.75rem]">
-            로그인
-          </h1>
+          <Link
+            href="/"
+            className="mt-[3.75rem] text-[#101828] text-[2.5rem] font-[600] leading-[3.75rem]"
+          >
+            똑<span className="text-[#839EFF]">디</span>
+          </Link>
           <p className="text-center text-[#475467] text-[1.5rem] leading-[2.25rem] font-[400]">
             똑디에서 다양한 면접 문제부터 취업 필승을 위한 <br />
             실전 꿀팁까지 한번에 이용해보세요.

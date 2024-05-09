@@ -10,33 +10,37 @@ interface NavLinkProps {
   label: string;
   imgSrc: JSX.Element;
   alt: string;
+  isFolded: boolean;
 }
 
-export default function NavLink({ href, label, imgSrc, alt }: NavLinkProps) {
+export default function NavLink({
+  href,
+  label,
+  imgSrc,
+  alt,
+  isFolded,
+}: NavLinkProps) {
   const pathname = usePathname();
-  const [showText, setShowText] = useState(true);
-
-  const handleTransitionEnd = () => {
-    setShowText(!showText);
-  };
 
   return (
     <div
       className={cls(
-        pathname === "/create-workbook/new"
-          ? "flex justify-center items-center w-[80px]"
-          : "flex gap-[12px] items-center pl-[72px] w-[280px]",
-        "sidebar-transition"
+        pathname === href
+          ? "border-[#2F07CC] border-r-4 rounded-t-[2px] rounded-b-[2px]"
+          : "",
+        "flex items-center w-full pl-[2rem] pt-[0.75rem] pb-[0.75rem]"
       )}
-      onTransitionEnd={handleTransitionEnd}
     >
-      <Link href={href} className="flex items-center gap-[12px] fill-black">
+      <Link
+        href={href}
+        className={cls("flex items-center gap-[12px] fill-black")}
+      >
         {imgSrc}
-        {pathname !== "/create-workbook/new" && showText && (
+        {!isFolded && (
           <p
             className={cls(
               pathname === href
-                ? "text-[#101828] text-[1rem] font-[600] leading-[1.5rem]"
+                ? "text-[#2F07CC] text-[1rem] font-[600] leading-[1.5rem]"
                 : "text-[#344054] text-[1rem] font-[400] leading-[1.5rem]"
             )}
           >
