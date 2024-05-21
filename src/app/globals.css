@@ -22,6 +22,10 @@
     outline: none;
   }
 
+  .signUpJobCard-shadow {
+    box-shadow: 0px 2px 12px 0px #31313114;
+  }
+
   .sidebar-shadow {
     box-shadow: 11px 0px 10px 0px #0000000a;
   }
