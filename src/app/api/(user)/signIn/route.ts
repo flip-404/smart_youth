@@ -23,5 +23,12 @@ export async function POST(request: Request) {
   });
 
   const { password, ...result } = user;
-  return new Response(JSON.stringify(result));
+  return new Response(
+    JSON.stringify({
+      success: true,
+      message: "회원가입 완료",
+      error: null,
+      data: result,
+    })
+  );
 }

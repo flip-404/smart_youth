@@ -1,6 +1,8 @@
 import cls from "@/utils/cls";
 import type { UseFormRegisterReturn } from "react-hook-form";
 import ClosedIcon from "/public/auth/ClosedEyesIcon.svg";
+import OpendIcon from "/public/auth/OpendEyesIcon.svg";
+import { useState } from "react";
 
 type InputProps = {
   type: string;
@@ -66,10 +68,13 @@ export const DefaultInput = ({
   required,
   isError,
 }: DefaultInputProps) => {
+  const isPasswordType = type === "password" || type === "passwordCheck";
+  const [hideInput, setHideInput] = useState(true);
+
   return (
     <div className="flex relative">
       <input
-        type="text"
+        type={isPasswordType && hideInput ? "password" : "text"}
         id={type}
         required={required}
         placeholder={placeholder}
@@ -79,9 +84,22 @@ export const DefaultInput = ({
           isError ? "border-[#ED6464]" : ""
         )}
       />
-      {type === "password" && (
-        <ClosedIcon className="absolute right-[1rem] top-1/2 translate-y-[-50%]" />
-      )}
+      {isPasswordType &&
+        (hideInput ? (
+          <ClosedIcon
+            onClick={() => {
+              setHideInput(false);
+            }}
+            className="absolute right-[1rem] top-1/2 translate-y-[-50%] cursor-pointer"
+          />
+        ) : (
+          <OpendIcon
+            onClick={() => {
+              setHideInput(true);
+            }}
+            className="absolute right-[1rem] top-1/2 translate-y-[-50%] cursor-pointer"
+          />
+        ))}
     </div>
   );
 };

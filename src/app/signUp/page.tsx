@@ -1,10 +1,8 @@
 "use client";
 
-import Input from "@/components/auth/Input";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import SignUpLineIcon from "/public/signUp/SignUpLineIcon.svg";
-
 import SignUpPhaseCheckIcon from "/public/auth/SignUpPhaseCheckIcon.svg";
 import cls from "@/utils/cls";
 import {
@@ -12,6 +10,13 @@ import {
   SecondPhaseForm,
   ThirdPhaseForm,
 } from "./formsByPhase";
+
+export type PasswordCondition = {
+  hasLetter: "default" | "success" | "error";
+  hasNumber: "default" | "success" | "error";
+  hasSpecialChar: "default" | "success" | "error";
+  isValidLength: "default" | "success" | "error";
+};
 
 export type SelectedJob = "frontend" | "backend" | "devops" | "ai" | null;
 
@@ -29,17 +34,47 @@ export default function SignUp() {
     register,
     handleSubmit,
     setError,
-    formState: { errors },
-  } = useForm<SignUpForm>({ mode: "onBlur" });
+    watch,
+    formState: { errors, isValid },
+  } = useForm<SignUpForm>({
+    mode: "onBlur",
+  });
 
   const [currentPhase, setCurrentPhase] = useState(1);
   const [selectedJob, setSelectedJob] = useState<SelectedJob>(null);
+  const passwordRef = useRef<string>("");
+  passwordRef.current = watch("password");
+  const [passwordConditions, setPasswordConditions] =
+    useState<PasswordCondition>({
+      hasLetter: "default",
+      hasNumber: "default",
+      hasSpecialChar: "default",
+      isValidLength: "default",
+    });
+
+  const handdlePasswordConditions = (passwordCondition: PasswordCondition) => {
+    setPasswordConditions(passwordCondition);
+  };
 
   const onValid = async (formData: SignUpForm) => {
-    console.log("formData", formData);
-    console.log("selectedJob", selectedJob);
-
     console.log("parsedData", { ...formData, job: selectedJob });
+
+    const testData = {
+      description: "냠냠",
+      email: "aka404365@gmail.com",
+      job: "frontend",
+      nickname: "dddd",
+      password: "testtest",
+    };
+
+    const res = await fetch("/api/signUp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(testData),
+    });
+    console.log("res", res);
   };
 
   const moveNextPhase = () => {
@@ -55,12 +90,18 @@ export default function SignUp() {
   };
 
   const renderSignUpForm = () => {
-    console.log("currentPhase", currentPhase);
-
     switch (currentPhase) {
       case 1:
         return (
-          <FirstPhaseForm moveNextPhase={moveNextPhase} register={register} />
+          <FirstPhaseForm
+            moveNextPhase={moveNextPhase}
+            register={register}
+            errors={errors}
+            isValid={isValid}
+            passwordValue={passwordRef.current}
+            passwordConditions={passwordConditions}
+            handdlePasswordConditions={handdlePasswordConditions}
+          />
         );
       case 2:
         return (
@@ -69,6 +110,7 @@ export default function SignUp() {
             moveNextPhase={moveNextPhase}
             changeSelectedJob={changeSelectedJob}
             selectedJob={selectedJob}
+            errors={errors}
           />
         );
       case 3:
@@ -77,11 +119,10 @@ export default function SignUp() {
             movePrevPhase={movePrevPhase}
             moveNextPhase={moveNextPhase}
             register={register}
+            errors={errors}
           />
         );
     }
-
-    return <></>;
   };
 
   return (
