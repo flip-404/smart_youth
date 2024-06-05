@@ -2,14 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import SignUpLineIcon from "/public/signUp/SignUpLineIcon.svg";
-import SignUpPhaseCheckIcon from "/public/auth/SignUpPhaseCheckIcon.svg";
-import cls from "@/utils/cls";
-import {
-  FirstPhaseForm,
-  SecondPhaseForm,
-  ThirdPhaseForm,
-} from "./formsByPhase";
+import { FirstPhaseForm } from "./_components/FirstPhaseForm";
+import { SecondPhaseForm } from "./_components/SecondPhaseForm";
+import { ThirdPhaseForm } from "./_components/ThirdPhaseForm";
+import { SignUpPhase } from "./_components/SignUpPhase";
 
 export type PasswordCondition = {
   hasLetter: "default" | "success" | "error";
@@ -52,27 +48,30 @@ export default function SignUp() {
       isValidLength: "default",
     });
 
-  const handdlePasswordConditions = (passwordCondition: PasswordCondition) => {
-    setPasswordConditions(passwordCondition);
+  const handdlePasswordConditions = (passwordValue: string) => {
+    if (!passwordValue) return;
+
+    const hasLetter = /[a-zA-Z]/.test(passwordValue);
+    const hasNumber = /\d/.test(passwordValue);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(passwordValue);
+    const isValidLength =
+      passwordValue.length >= 8 && passwordValue.length <= 15;
+
+    setPasswordConditions({
+      hasLetter: hasLetter ? "success" : "error",
+      hasNumber: hasNumber ? "success" : "error",
+      hasSpecialChar: hasSpecialChar ? "success" : "error",
+      isValidLength: isValidLength ? "success" : "error",
+    });
   };
 
   const onValid = async (formData: SignUpForm) => {
-    console.log("parsedData", { ...formData, job: selectedJob });
-
-    const testData = {
-      description: "냠냠",
-      email: "aka404365@gmail.com",
-      job: "frontend",
-      nickname: "dddd",
-      password: "testtest",
-    };
-
     const res = await fetch("/api/signUp", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(testData),
+      body: JSON.stringify(formData),
     });
     console.log("res", res);
   };
@@ -85,7 +84,7 @@ export default function SignUp() {
     setCurrentPhase((prev) => prev - 1);
   };
 
-  const changeSelectedJob = (job: "frontend" | "backend" | "devops" | "ai") => {
+  const changeSelectedJob = (job: SelectedJob) => {
     setSelectedJob(job);
   };
 
@@ -108,16 +107,16 @@ export default function SignUp() {
           <SecondPhaseForm
             movePrevPhase={movePrevPhase}
             moveNextPhase={moveNextPhase}
+            isValid={isValid}
             changeSelectedJob={changeSelectedJob}
             selectedJob={selectedJob}
-            errors={errors}
           />
         );
       case 3:
         return (
           <ThirdPhaseForm
             movePrevPhase={movePrevPhase}
-            moveNextPhase={moveNextPhase}
+            isValid={isValid}
             register={register}
             errors={errors}
           />
@@ -139,81 +138,3 @@ export default function SignUp() {
     </div>
   );
 }
-
-const SignUpPhase = ({ phase }: { phase: number }) => {
-  return (
-    <div className="flex justify-center mt-[2rem]">
-      <div className="flex flex-col items-center gap-[4px]">
-        <div
-          className={cls(
-            phase === 1 ? "text-[#ffffff] bg-[#623AFF]" : "",
-            phase > 1 ? "bg-[#B09DFF]" : "",
-            phase !== 1 && phase <= 1
-              ? "border border-[#D0D5DD] text-[600]"
-              : "",
-            "w-[2.5rem] h-[2.5rem] flex justify-center items-center rounded-full text-[#98A2B3] "
-          )}
-        >
-          {phase > 1 ? <SignUpPhaseCheckIcon /> : "01"}
-        </div>
-
-        <div
-          className={cls(
-            phase === 1 ? "text-[#2F07CC]" : "text-[#667085]",
-            " flex justify-center text-[1rem] font-[400] leading-[1.5rem]"
-          )}
-        >
-          계정 정보
-        </div>
-      </div>
-      <SignUpLineIcon />
-      <div className="flex flex-col items-center gap-[4px]">
-        <div
-          className={cls(
-            phase === 2 ? "text-[#ffffff] bg-[#623AFF]" : "",
-            phase > 2 ? "bg-[#B09DFF]" : "",
-            phase !== 2 && phase <= 2
-              ? "border border-[#D0D5DD] text-[600]"
-              : "",
-            "w-[2.5rem] h-[2.5rem] flex justify-center items-center rounded-full text-[#98A2B3] "
-          )}
-        >
-          {phase > 2 ? <SignUpPhaseCheckIcon /> : "02"}
-        </div>
-
-        <div
-          className={cls(
-            phase === 2 ? "text-[#2F07CC]" : "text-[#667085]",
-            " flex justify-center text-[1rem] font-[400] leading-[1.5rem]"
-          )}
-        >
-          직무
-        </div>
-      </div>
-      <SignUpLineIcon />
-      <div className="flex flex-col items-center gap-[4px]">
-        <div
-          className={cls(
-            phase === 3 ? "text-[#ffffff] bg-[#623AFF]" : "",
-            phase > 3 ? "bg-[#B09DFF]" : "",
-            phase !== 3 && phase <= 3
-              ? "border border-[#D0D5DD] text-[600]"
-              : "",
-            "w-[2.5rem] h-[2.5rem] flex justify-center items-center rounded-full text-[#98A2B3] "
-          )}
-        >
-          03
-        </div>
-
-        <div
-          className={cls(
-            phase === 3 ? "text-[#2F07CC]" : "text-[#667085]",
-            " flex justify-center text-[1rem] font-[400] leading-[1.5rem]"
-          )}
-        >
-          프로필
-        </div>
-      </div>
-    </div>
-  );
-};
