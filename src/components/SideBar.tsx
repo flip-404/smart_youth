@@ -10,10 +10,13 @@ import OpenIcon from "/public/sidebar/OpenIcon.svg";
 import MyActivityIcon from "/public/sidebar/MyActivityIcon.svg";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { signOut, useSession } from "next-auth/react";
 
 export default function SideBar() {
   const pathName = usePathname();
   const [isFolded, setIsFolded] = useState(false);
+  const { data: session } = useSession();
+  console.log("session:", session);
 
   const [isVisible, setIsVisible] = useState(
     !(pathName === "/signIn" || pathName === "/signUp")
@@ -80,18 +83,29 @@ export default function SideBar() {
           />
         </div>
         <div className="flex flex-col mb-[4.5rem] gap-[0.75rem]">
-          <Link
-            href="/signIn"
-            className="rounded-[4px] flex justify-center items-center bg-[#F9FAFB] w-[8.5rem] h-[2rem] text-[#1D2939] text-[1.1rem] font-[600] reading-[1.3rem]"
-          >
-            로그인
-          </Link>
-          <Link
-            href="/signUp"
-            className="rounded-[4px] flex justify-center items-center bg-[#F1EEFF] w-[8.5rem] h-[2rem] text-[#2F07CC] text-[1.1rem] font-[600] reading-[1.3rem]"
-          >
-            5초 회원가입
-          </Link>
+          {session ? (
+            <button
+              className="rounded-[4px] flex justify-center items-center bg-[#F1EEFF] w-[8.5rem] h-[2rem] text-[#2F07CC] text-[1.1rem] font-[600] reading-[1.3rem]"
+              onClick={() => signOut()}
+            >
+              로그아웃
+            </button>
+          ) : (
+            <>
+              <Link
+                href="/signIn"
+                className="rounded-[4px] flex justify-center items-center bg-[#F9FAFB] w-[8.5rem] h-[2rem] text-[#1D2939] text-[1.1rem] font-[600] reading-[1.3rem]"
+              >
+                로그인
+              </Link>
+              <Link
+                href="/signUp"
+                className="rounded-[4px] flex justify-center items-center bg-[#F1EEFF] w-[8.5rem] h-[2rem] text-[#2F07CC] text-[1.1rem] font-[600] reading-[1.3rem]"
+              >
+                5초 회원가입
+              </Link>
+            </>
+          )}
         </div>
       </div>
     )
