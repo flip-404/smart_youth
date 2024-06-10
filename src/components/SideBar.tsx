@@ -15,8 +15,8 @@ import { signOut, useSession } from "next-auth/react";
 export default function SideBar() {
   const pathName = usePathname();
   const [isFolded, setIsFolded] = useState(false);
-  const { data } = useSession();
-  console.log("data:", data);
+  const SessionData = useSession();
+  console.log("SessionData:", SessionData);
 
   const [isVisible, setIsVisible] = useState(
     !(pathName === "/signIn" || pathName === "/signUp")
@@ -83,7 +83,7 @@ export default function SideBar() {
           />
         </div>
         <div className="flex flex-col mb-[4.5rem] gap-[0.75rem]">
-          {data ? (
+          {SessionData ? (
             <button
               className="rounded-[4px] flex justify-center items-center bg-[#F1EEFF] w-[8.5rem] h-[2rem] text-[#2F07CC] text-[1.1rem] font-[600] reading-[1.3rem]"
               onClick={() => signOut()}
