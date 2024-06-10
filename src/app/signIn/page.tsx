@@ -4,18 +4,37 @@ import Input from "@/components/auth/Input";
 import ErrorMessage from "../../components/auth/errorMessage";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
 export interface SignInForm {
   email: string;
   password: string;
 }
 
 export default function SignIn() {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
     setError,
     formState: { errors },
   } = useForm<SignInForm>({ mode: "onBlur" });
+
+  const onValid = async (formData: SignInForm) => {
+    const result = await signIn("credentials", {
+      email: formData.email,
+      password: formData.password,
+      redirect: false,
+      callbackUrl: "/",
+    });
+
+    if (!result?.ok)
+      setError("password", {
+        message: "이메일 혹은 비밀번호가 일치하지 않습니다.",
+      });
+    else router.push("/");
+  };
 
   return (
     <div className="w-full flex justify-center h-screen">
