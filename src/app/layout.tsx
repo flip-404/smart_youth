@@ -25,9 +25,9 @@ export default async function RootLayout({
   return (
     <html lang="en" className="bg-white overflow-hidden">
       <body className={cls(inter.className)}>
-        <Header />
-        <SideBar />
         <Providers session={session}>
+          <Header />
+          <SideBar />
           <div className="bg-white pt-[3rem]">{children}</div>
         </Providers>
       </body>
