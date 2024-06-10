@@ -66,6 +66,8 @@ export default function SignUp() {
   };
 
   const onValid = async (formData: SignUpForm) => {
+    console.log("formData", formData);
+
     const res = await fetch("/api/signUp", {
       method: "POST",
       headers: {
