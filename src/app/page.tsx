@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 
 export default function Home() {
   const SessionData = useSession();
-  console.log("SessionData:", SessionData);
+  console.log("Home SessionData:", SessionData);
 
   return (
     <div className="pl-[280px] ">

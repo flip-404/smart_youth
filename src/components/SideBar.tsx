@@ -16,7 +16,7 @@ export default function SideBar() {
   const pathName = usePathname();
   const [isFolded, setIsFolded] = useState(false);
   const SessionData = useSession();
-  console.log("SessionData:", SessionData);
+  console.log("SideBar SessionData:", SessionData);
 
   const [isVisible, setIsVisible] = useState(
     !(pathName === "/signIn" || pathName === "/signUp")
