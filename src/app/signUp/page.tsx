@@ -29,7 +29,6 @@ export default function SignUp() {
   const {
     register,
     handleSubmit,
-    setError,
     watch,
     formState: { errors, isValid },
   } = useForm<SignUpForm>({
@@ -73,7 +72,7 @@ export default function SignUp() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({ ...formData, job: selectedJob }),
     });
     console.log("res", res);
   };
