@@ -6,7 +6,7 @@ import cls from "@/utils/cls";
 import SideBar from "@/components/SideBar";
 import Providers from "@/components/Providers";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "./libs/auth";
 
 const inter = Inter({ subsets: ["latin"] });
 
