@@ -1,4 +1,3 @@
-import prisma from "@/app/libs/prisma";
 import { signJwtAccessToken } from "@/app/libs/jwt";
 import * as bcrypt from "bcrypt";
 import client from "@/app/libs/prisma";
