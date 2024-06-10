@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       email: body.email,
       password: await bcrypt.hash(body.password, 10),
       nickname: body.nickname,
-      job: body.job,
+      job: "frontend",
       description: body.description,
     },
   });

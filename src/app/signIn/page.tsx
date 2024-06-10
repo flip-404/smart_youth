@@ -5,7 +5,7 @@ import ErrorMessage from "../../components/auth/errorMessage";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 export interface SignInForm {
   email: string;
   password: string;
@@ -33,7 +33,10 @@ export default function SignIn() {
       setError("password", {
         message: "이메일 혹은 비밀번호가 일치하지 않습니다.",
       });
-    else router.push("/");
+    else {
+      console.log("로그인 성공");
+      router.push("/");
+    }
   };
 
   return (
@@ -51,7 +54,10 @@ export default function SignIn() {
             실전 꿀팁까지 한번에 이용해보세요.
           </p>
         </div>
-        <form className="flex flex-col w-[40.75rem] gap-[1.75rem]">
+        <form
+          onSubmit={handleSubmit(onValid)}
+          className="flex flex-col w-[40.75rem] gap-[1.75rem]"
+        >
           <div className="flex flex-col gap-[0.5rem]">
             <Input
               type="email"
@@ -104,7 +110,10 @@ export default function SignIn() {
             </Link>
           </div>
           <div className="flex flex-col justify-center items-center gap-[1.75rem]">
-            <button className="flex justify-center items-center w-[30.25rem] h-[3rem] py-[0.75rem] px-[1.5rem] rounded-[4px] bg-[#3A09FF] text-white text-[1rem] font-[600] reading-[1.5rem]">
+            <button
+              type="submit"
+              className="flex justify-center items-center w-[30.25rem] h-[3rem] py-[0.75rem] px-[1.5rem] rounded-[4px] bg-[#3A09FF] text-white text-[1rem] font-[600] reading-[1.5rem]"
+            >
               로그인
             </button>
             <div className="flex gap-[1rem]">
