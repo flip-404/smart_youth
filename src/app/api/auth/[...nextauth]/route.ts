@@ -1,4 +1,4 @@
-//app/apis/auth/[...nextauth]/route.ts
+//app/api/auth/[...nextauth]/route.ts
 
 import NextAuth from "next-auth/next";
 import type { AuthOptions } from "next-auth";
@@ -17,7 +17,7 @@ export const authOptions: AuthOptions = {
       },
 
       async authorize(credentials, req) {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/apis/signIn`, {
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/signIn`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
