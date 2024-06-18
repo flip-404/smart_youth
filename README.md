@@ -6,8 +6,6 @@
 
 `똑디`는 AI를 활요한 면접 도우미입니다. 개발자 면접에서 나오는 질문이 어느정도 정해져 있다는 점에서 착안해 개발한 면접 준비 사이트입니다. 이 프로젝트는 Next.JS, Next-Auth, SWR, Prisma, MySQL, Typescript, Tailwind, Chat-GPT Assistanst API 등을 사용하여 개발됩니다.
 
-![image](https://hackmd.io/_uploads/rJDbrwAr0.png)
-
 
 ### 기술 스택
 프론트엔드: Next.JS, Tailwind CSS, Typescript <br/>
