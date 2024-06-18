@@ -1,7 +1,7 @@
 # 똑디 (똑똑한 스터디 - AI를 활요한 면접 도우미)
 프로젝트 기간: 2024.01.06 ~ <strong>holidng</strong><br/>
 인원: 1인 개발<br/>
-사용 기술: Next.JS, Next-Auth, SWR, Prisma, Typescript, Tailwind, Chat-GPT Assistanst API<br/>
+사용 기술: Next.JS, Next-Auth, SWR, Prisma, MySQL, Typescript, Tailwind, Chat-GPT Assistanst API<br/>
 배포(임시): https://smart-youth.vercel.app/<br/>
 
 `똑디`는 AI를 활요한 면접 도우미입니다. 개발자 면접에서 나오는 질문이 어느정도 정해져 있다는 점에서 착안해 개발한 면접 준비 사이트입니다. 이 프로젝트는 Next.JS, Next-Auth, SWR, Prisma, MySQL, Typescript, Tailwind, Chat-GPT Assistanst API 등을 사용하여 개발됩니다.
@@ -9,7 +9,7 @@
 
 ### 기술 스택
 프론트엔드: Next.JS, Tailwind CSS, Typescript <br/>
-백엔드: Next.JS (API Routes), Prisma <br/>
+백엔드: Next.JS (API Routes), Prisma, MySQL <br/>
 인증: Next-Auth <br/>
 데이터 페칭: SWR <br/>
 API 연동: Chat-GPT Assistanst API <br/>
